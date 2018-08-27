@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WebApplication.Models.Log>
+@{
+    ViewBag.Title = "Logs";
+}
+<style>
+    body {
+        background-image: url("/back.png");
+        background-repeat: no-repeat;
+        background-position: right top;
+        margin-right: 200px;
+    }
+</style>
+<h1>Logs</h1>
+
+<div>
+    <h4>What kind of log information you want?</h4>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+    </style>
+    <input type="text" id="logg" name="logType" />
+    <input type="button" id="btnSelect" value="Select" />
+    <table class="table" id="myTable"> </table>
+
+</div>
+<script>
+    var logType = '';
+    var table = '';
+    $("#btnSelect").click(function () {
+        //clear the table'
+        $('#myTable').empty();
+        //build the table from zero
+        table += "<tr bgcolor=\"\#52A5D5\"\>";
+        table += "<th>";
+        table += "Type";
+        table += "</th>";
+        table += "<th>";
+        table += "Data";
+        table += "</th>";
+        table += "</tr>";
+        @foreach (var path in Model) {
+            <text>
+        logType = '@path.Type.ToString()';
+        //if current log type equels users input-add to table
+        if (logType.includes($('#logg').val())) {
+            table += "<tr>";
+            table += "<td>";
+            table += "@path.Type";
+            table += "</td>";
+            table += "<td>";
+            table += "@path.Data";
+            table += "</td>";
+            table += "</tr>";
+        }
+             </text>
+                 }
+        //add table-convar from string to html code
+        $('#myTable').html(table);
+        //clear table param for next input
+        table = '';
+             });
+</script>

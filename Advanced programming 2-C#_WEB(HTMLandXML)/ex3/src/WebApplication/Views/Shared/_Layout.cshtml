@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+ 
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+        #grad {
+            background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+        }
+        h5 {
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                @Html.ActionLink("Image Web", "ImageWeb", "Main", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Config", "Config", "Config")</li>
+                    <li>@Html.ActionLink("Logs", "Logs", "Logs")</li>
+                    <li>@Html.ActionLink("Photos", "Photos", "Main")</li>
+                </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Ori Cohen & Yana Patyuk Application</p>
+        </footer>
+        <h5>the meaning of life the universe and everything is 42</h5>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+C:\Users\Yana Patyuk\source\repos\ImageService\Logging\obj\Debug\Logging.csprojResolveAssemblyReference.cache
+C:\Users\Yana Patyuk\source\repos\ImageService\Logging\obj\Debug\Logging.csproj.CoreCompileInputs.cache
+C:\Users\Yana Patyuk\source\repos\ImageService\Logging\bin\Debug\Logging.dll
+C:\Users\Yana Patyuk\source\repos\ImageService\Logging\bin\Debug\Logging.pdb
+C:\Users\Yana Patyuk\source\repos\ImageService\Logging\bin\Debug\Infrastructure.dll
+C:\Users\Yana Patyuk\source\repos\ImageService\Logging\bin\Debug\Infrastructure.pdb
+C:\Users\Yana Patyuk\source\repos\ImageService\Logging\obj\Debug\Logging.csproj.CopyComplete
+C:\Users\Yana Patyuk\source\repos\ImageService\Logging\obj\Debug\Logging.dll
+C:\Users\Yana Patyuk\source\repos\ImageService\Logging\obj\Debug\Logging.pdb

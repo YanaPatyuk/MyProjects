@@ -1,0 +1,34 @@
+﻿@model WebApplication.Models.PhotoInfo
+
+@{
+    ViewBag.Title = "ViewFullPhoto";
+}
+
+<h1>ViewFullPhoto</h1>
+
+<div class="col-xs-18 col-sm-6 col-md-3">
+    <div class="caption" text-align="center">
+        <h4>name: @Model.Name</h4>
+        <p>time: @Model.TimeTaken</p>
+        <p>
+            <button onclick="RemovePicAlert('@Model.Name', '@Model.TimeTaken', '@Url.Content(Model.AbsToRelativePath(Model.Path))')" class="btn btn-default btn-xs">Remove</button>
+        </p>
+        <p id="demo"></p>
+        <img src="@Url.Content(Model.RelativePath)" />
+
+
+    </div>
+</div>
+
+<script>
+    function RemovePicAlert(photoName, photoTimeTaken, path_to) {
+        // pop alert to make sure the user wants to delete this photo
+        if (confirm("Are you sure you want to delete photo: '" + photoName + "' taken at: " + photoTimeTaken)) {
+            var input = { path: path_to };
+            $.get("@Url.Action("RemovePic")", input, function (data) {
+                window.location.replace("@Url.Action("Photos", "Main", new { })"); // move back to gallery view
+            }, "text");
+
+        }
+    }
+</script>

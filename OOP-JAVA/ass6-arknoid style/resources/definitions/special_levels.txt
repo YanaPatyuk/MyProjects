@@ -1,0 +1,65 @@
+
+# Level 1
+# The Joker
+
+START_LEVEL
+level_name:Joker
+ball_velocities:-30,550 30,550
+background:image(resources/background_images/joker.jpg)
+paddle_speed:650
+paddle_width:600
+block_definitions:resources/definitions/joker_def.txt
+blocks_start_x:25
+blocks_start_y:80
+row_height:25
+num_blocks:50
+START_BLOCKS
+-------ggg--
+------ggggg-
+------ggggg-
+-----ggwwwgg
+-----gwbwbwg
+-----gwbwbwg
+------wwwww-
+------rwwwr-
+------rbbbr-
+-------www--
+------ppgpp-
+------pprpp--
+
+END_BLOCKS
+END_LEVEL
+
+# Level 2
+# The symbol of Batman
+
+START_LEVEL
+level_name: Batman
+ball_velocities:45,550 46,550 47,550
+background:image(resources/background_images/batman.jpg)
+paddle_speed:650
+paddle_width:500
+block_definitions:resources/definitions/batman.txt
+blocks_start_x:25
+blocks_start_y:80
+row_height:25
+num_blocks:175
+START_BLOCKS
+----------yyyyyyy--
+--------yyyyyyyyyyy
+-------yybyybybyybyy
+------yybyyybbbyyybyy
+-----yybbyyybbbyyybbyy
+-----ybbbbybbbbbybbbby
+-----ybbbbbbbbbbbbbbby
+-----ybbbbbbbbbbbbbbby
+-----ybbbbbbbbbbbbbbby
+-----ybbbbbbbbbbbbbbby
+-----yybbybybbbybybbyy
+------yybyyyybyyyybyy-
+-------yybyyybyyybyy--
+--------yyyyyyyyyyy
+
+END_BLOCKS
+END_LEVEL
+

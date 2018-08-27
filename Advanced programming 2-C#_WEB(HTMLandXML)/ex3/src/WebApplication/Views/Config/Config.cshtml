@@ -1,0 +1,65 @@
+﻿@model WebApplication.Models.Settings
+@{
+    ViewBag.Title = "Config";
+}
+<style>
+    body {
+        background-image: url("/back.png");
+        background-repeat: no-repeat;
+        background-position: right top;
+        margin-right: 200px;
+    }
+</style>
+<div class=" ">
+    <h1>Config Settings</h1>
+    <table class="table-bordered">
+
+        <tr bgcolor="#52A5D5">
+            <th>
+                @Html.DisplayNameFor(model => model.SrcName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LogName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThumbNail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OutPutDur)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.SrcName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.LogName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.ThumbNail)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.OutPutDur)
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="btn-group-vertical">
+    <h3 >Handlers</h3>
+    <h4> For brave people: to delete a handler click on one of them.</h4>
+    @{ var i = 0;
+        if (Model.Handlers.Count() != 0)
+        {
+            foreach (var handler in Model.Handlers)
+            {//create linked
+                <a href="@Url.Action("Delete", "Config", new { path = handler })" class="btn btn-info btn-lg" role="button">
+                    @Html.DisplayFor(modelItem => handler)
+                </a>
+                i++;
+            }
+
+        }
+    }
+</div>

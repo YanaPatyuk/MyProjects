@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\ImageService",
+    "\\ImageService\\ImageService",
+    "\\ImageService\\ImageService.Logging",
+    "\\ImageService\\ImageService\\Commands",
+    "\\ImageService\\ImageService\\Controller",
+    "\\ImageService\\ImageService\\Controller\\Handlers",
+    "\\ImageService\\ImageService\\Modal",
+    "\\ImageService\\ImageService\\Server"
+  ],
+  "PreviewInSolutionExplorer": false
+}

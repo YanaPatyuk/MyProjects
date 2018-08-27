@@ -1,0 +1,7 @@
+C:\Users\Yana Patyuk\source\repos\ImageService\Infrastructure\bin\Debug\Infrastructure.dll
+C:\Users\Yana Patyuk\source\repos\ImageService\Infrastructure\bin\Debug\Infrastructure.pdb
+C:\Users\Yana Patyuk\source\repos\ImageService\Infrastructure\obj\Debug\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Yana Patyuk\source\repos\ImageService\Infrastructure\obj\Debug\Infrastructure.dll
+C:\Users\Yana Patyuk\source\repos\ImageService\Infrastructure\obj\Debug\Infrastructure.pdb
+C:\Users\Yana Patyuk\source\repos\ImageService\Infrastructure\bin\Debug\Infrastructure.dll.CodeAnalysisLog.xml
+C:\Users\Yana Patyuk\source\repos\ImageService\Infrastructure\bin\Debug\Infrastructure.dll.lastcodeanalysissucceeded

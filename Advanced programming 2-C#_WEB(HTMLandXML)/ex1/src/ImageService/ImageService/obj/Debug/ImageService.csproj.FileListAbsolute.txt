@@ -1,0 +1,10 @@
+c:\users\yana patyuk\source\repos\ImageService\ImageService\bin\Debug\ImageService.exe.config
+c:\users\yana patyuk\source\repos\ImageService\ImageService\bin\Debug\ImageService.exe
+c:\users\yana patyuk\source\repos\ImageService\ImageService\bin\Debug\ImageService.pdb
+c:\users\yana patyuk\source\repos\ImageService\ImageService\obj\Debug\ImageService.csprojResolveAssemblyReference.cache
+c:\users\yana patyuk\source\repos\ImageService\ImageService\obj\Debug\ImageService.ImageService.resources
+c:\users\yana patyuk\source\repos\ImageService\ImageService\obj\Debug\ImageService.ProjectInstaller.resources
+c:\users\yana patyuk\source\repos\ImageService\ImageService\obj\Debug\ImageService.csproj.GenerateResource.cache
+c:\users\yana patyuk\source\repos\ImageService\ImageService\obj\Debug\ImageService.csproj.CoreCompileInputs.cache
+c:\users\yana patyuk\source\repos\ImageService\ImageService\obj\Debug\ImageService.exe
+c:\users\yana patyuk\source\repos\ImageService\ImageService\obj\Debug\ImageService.pdb

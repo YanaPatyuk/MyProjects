@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Image_Service_GUI.View"
+        x:Class="Image_Service_GUI.View.MainWindow"
+        mc:Ignorable="d"
+        Title="Image Service" Height="350" Width="600" Background="{Binding VM_BackgroundColor}"
+        Closing="Window_Closing">
+
+    <Grid>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" Margin="10,0,10,5" VerticalAlignment="Stretch" SelectionChanged="tabControl_SelectionChanged" Height="Auto" Width="Auto">
+            <TabItem Header="Settings">
+                <local:SettingsUserControl/>
+            </TabItem>
+            <TabItem Header="Logs">
+                <local:LogUserControl/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

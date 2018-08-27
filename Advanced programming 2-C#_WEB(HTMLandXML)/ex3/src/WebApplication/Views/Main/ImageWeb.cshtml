@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication.Models.Student>
+
+@{
+    ViewBag.Title = "ImageWeb";
+}
+<style>
+    body {
+        background-image: url("/back.png");
+        background-repeat: no-repeat;
+        background-position: right top;
+        margin-right: 200px;
+    }
+    table, th, td {
+        border-collapse: collapse;
+    }
+</style>
+<h1>Who Are we?</h1>
+
+
+<table class="table body-content" border-collapse="collapse">
+    <tr bgcolor="#52A5D5">
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => student.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => student.IDNumber)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<h4>
+    Service Current Status:<span class="label label-default" id="status1">@ViewBag.status</span>
+</h4>
+<script>
+
+    var  statuss = "@ViewBag.status";
+    if (statuss == "Connected") $("#status1").text("Connected").removeClass("label-default").addClass("label-success");
+    else $("#status1").text("DisConnected").removeClass("label-default").addClass("label-danger");
+</script>
+
+<h4>Number of pics: <span class="badge">@ViewBag.picNumber</span></h4>
+
+
+
+

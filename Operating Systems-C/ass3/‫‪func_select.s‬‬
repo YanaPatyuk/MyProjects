@@ -1,0 +1,77 @@
+#%include "io.inc"
+
+.data
+tamp:   .string "this is my first print\n"
+check:  .string "secsses in case!!!! \n"
+doneN:  .string "done\n"
+    .section	.rodata	#read only data section
+    .align 8
+    .text	#beginning of the code:
+.global main
+    .type main, @function
+main:
+    movq %rsp, %rbp #for correct debugging
+        pushq	%rbx		#save value of callee-saved register         movq   $1, %rdi
+        movq $48, %rdi
+        call run_func
+        movq	$0,	%rax	#return value is zero.
+        popq	%rbx		#restore callee-saved register	
+        ret
+
+.global run_func
+    .type run_func, @function
+run_func:
+      pushq	%rbx		# we need a save resiter to save the return address to the main function.
+          # Set up the jump table access
+      leaq -50(%rdi),%rax       	# Compute xi = x-50
+      cmpq $4,%rax                     # Compare xi:4
+      ja .DefMission 	          # if >, goto default-case
+      jmp *.Switch_Case(,%rax,8)	# Goto jt[xi]
+   # movel %rdi, %eax          #get n
+.Switch_Case:
+     .quad .FirstMission        #case 50
+     .quad .SecondMission       #case 51
+     .quad .ThirdMission        #case 52
+     .quad .ForthMission        #case 53
+     .quad .DefMission
+     
+      
+      #case 50
+.FirstMission:
+        movq	$check,%rdi	#passing the string the first parameter for printf.
+        movq	$0,%rax
+        call	printf		#calling printf.
+        movq	$0, %rax	        #return value is zero.
+        jmp .done
+        
+      #case 51
+.SecondMission:
+        jmp .done
+        
+      #case 52
+.ThirdMission:
+        jmp .done
+        
+      #case 53
+.ForthMission:
+        jmp .done
+        
+      #case def:
+.DefMission:
+      	movq	$tamp,%rdi	#passing the string the first parameter for printf.
+	movq	$0,%rax
+	call	printf		#calling printf.
+	movq	$0, %rax	         #return value is zero.
+        jmp .done
+        
+      # done:
+.done:
+      	movq	$doneN,%rdi	#passing the string the first parameter for printf.
+	movq	$0,%rax
+	call	printf		#calling printf.
+	movq	$0, %rax	         #return value is zero.
+          movq %rdi,%rax 
+	popq	%rbx		#restoring the save register (%rbx) value, for the caller function.          
+          ret			#return to caller function (main)
+      
+      

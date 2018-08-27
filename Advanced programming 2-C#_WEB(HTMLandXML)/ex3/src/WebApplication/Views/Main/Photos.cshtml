@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebApplication.Models.PhotoInfo>
+
+@{
+    ViewBag.Title = "Photos";
+}
+
+
+<h1>Photos</h1>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container" id="tourpackages-carousel">
+
+    <div class="row">
+
+    <!-- for each photo draw it in gallery-->
+        @foreach (var photo in Model)
+            {
+            <div class="col-xs-18 col-sm-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="@Url.Content(photo.RelativePath)" class="img-circle" alt="Cinque Terre" />
+                    <div class="caption">
+                        <h4>@photo.Name</h4>
+                        <p>@photo.TimeTaken</p>
+                        <p>
+                            <a href="@Url.Action("ViewFullPhoto", "Main", new { name = photo.Name, timeTaken = photo.TimeTaken, path = Url.Content(photo.Path), relPath = @Url.Content(photo.RelativePath) })" class="btn btn-info btn-xs" role="button">View</a>
+                            <button onclick="RemovePicAlert('@photo.Name', '@photo.TimeTaken', '@Url.Content(photo.RelativePath)')" class="btn btn-default btn-xs">Remove</button>
+                        </p>
+                        <p id="demo"></p>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <script>
+            function RemovePicAlert(photoName, photoTimeTaken, path_to) {
+                // pop alert to make sure the user wants to delete this photo
+                if (confirm("Are you sure you want to delete photo: '" + photoName + "' taken at: " + photoTimeTaken)) {
+                    var input = { path: path_to };
+                    $.get("@Url.Action("RemovePic")", input, function (data) {
+                        document.getElementById("demo").innerHTML = data;
+                        // reload page
+                        window.location.reload();
+                    }, "text");
+
+                }
+            }
+        </script>
+
+
+    </div><!-- End row -->
+
+</div><!-- End container -->
