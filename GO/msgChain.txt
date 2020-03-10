@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+func main() {
+	const n = 100000
+	firstRight := make(chan int)//create the first chan
+	var current = firstRight //create another pointer to the first chan to work with
+	for i := 0; i < n; i++ {
+		//each iter current sends iteslf as the right chan and updates as the new left.
+		current = sendToLeft(current)
+	}
+	firstRight <- 1//send 1 to first chan
+	fmt.Println(<-current)//current at this point is the 100000 chan created
+}
+
+func sendToLeft(prev chan int) chan int {
+	next := make(chan int)//create next chan
+	go func() {//create go routine
+		num := <-prev//wait till prev chan write a number
+		num++//upgrade by one
+		next<- num//write to next chan
+	}()
+	return next//return next chan
+}

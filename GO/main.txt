@@ -1,0 +1,34 @@
+// Fetch prints the content found at each specified URL.
+package main
+
+import (
+	"fmt"
+	"io"
+	"net/http"
+	"os"
+	"strings"//add strings
+)
+
+func main() {
+	for _, url := range os.Args[1:] {
+		//check: if utl not starts with 'http'-add to url
+		if !strings.HasPrefix(url, "http") {
+			url = "http://" + url
+		}
+		resp, err := http.Get(url)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "fetch: %v\n", err)
+			os.Exit(1)
+		}
+		//use copy to read from Body and write to stdout(prints)
+		_, err = io.Copy(os.Stdout, resp.Body)
+		resp.Body.Close()
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "fetch: reading %s: %v\n", url, err)
+			os.Exit(1)
+		}
+		// Print the HTTP Status Code.
+		//note:to print the status text i.e "200 OK", delete word "Code"
+		fmt.Println("HTTP status code: ", resp.StatusCode)
+		}
+}
