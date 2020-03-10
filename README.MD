@@ -1,6 +1,6 @@
 ### Projects
-Hi, my name is Yana and I am in the last year of computer science studies. This is my limited portfolio.
-This git includes all my code-work during my first and second years.
+Hi, my name is Yana and I have a B.A in computer science. This is my limited portfolio.
+This git includes all my code-work during my studies.
 
 |  subject |  lang |
 | ------------ | ------------ |
@@ -13,11 +13,12 @@ This git includes all my code-work during my first and second years.
 |BIG DATA| Python |
 |ML | Python|
 | AI| C++|
+|DATA BASE|MySQL and Pyhton|
 
 
 
-> In my third year, I did most of my work with my teammates so I didn't include them in Git.
-The projects included exercises in machine learning, artificial intelligence, cyber and Big data.
+> In my third year, I did most of my work with my teammates so I didn't include all of them in Git.
+The projects included exercises in machine learning, artificial intelligence, cyber.
 
 Email: yana.patyuk@gamil.com
 
