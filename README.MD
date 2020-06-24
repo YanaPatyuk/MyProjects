@@ -1,6 +1,6 @@
 ### Projects
-Hi, my name is Yana and I have a B.A in computer science. This is my limited portfolio.
-This git includes all my code-work during my studies.
+Hi, my name is Yana and I have a B.Sc in computer science. This is my limited portfolio.
+This git includes most of my code-work during my studies.
 
 |  subject |  lang |
 | ------------ | ------------ |
