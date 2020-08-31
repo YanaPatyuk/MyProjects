@@ -20,5 +20,5 @@ This git includes most of my code-work during my studies.
 > In my third year, I did most of my work with my teammates so I didn't include all of them in Git.
 The projects included exercises in machine learning, artificial intelligence, cyber.
 
-Email: yana.patyuk@gamil.com
+Email: yana.patyuk@gmail.com
 
